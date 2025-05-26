@@ -1,6 +1,6 @@
 # Interview Question
 
-This repository is for the Data Eng-Sandpit interview.
+This repository is an exercise for the Data Eng-Sandpit interview about API and DB.
 
 ## Structure
 
