@@ -1,0 +1,40 @@
+version: "3.9"
+services:
+  api:
+    build:
+      context: .
+      dockerfile: api.dockerfile
+    image: interview/api:latest
+    container_name: interview_api
+    ports: 
+      - 8888:8888
+  dummy:
+    image: alpine/curl:3.14
+    container_name: dummy
+    command: 
+      - /bin/sh
+      - -c
+      - |
+        echo "Waiting for API to be ready..."
+        until curl -s http://api:8888/users/; do sleep 1; done
+
+        # Create users
+        curl -X POST 'http://api:8888/users/' -H 'accept: application/json' -H 'Content-Type: application/json' -d '{"email": "bilbo@baggins.com", "password": "whyshouldnti"}'
+        curl -X POST 'http://api:8888/users/' -H 'accept: application/json' -H 'Content-Type: application/json' -d '{"email": "samwise@gamgee.com", "password": "potatoes"}'
+        curl -X POST 'http://api:8888/users/' -H 'accept: application/json' -H 'Content-Type: application/json' -d '{"email": "frodo@baggins.com", "password": "iamnotready"}'
+
+        # Add items for user 1 (Bilbo)
+        curl -X POST 'http://api:8888/users/1/items/' -H 'accept: application/json' -H 'Content-Type: application/json' -d '{"title": "Sting","description": "\"I will give you a name\", he said to it, \"and I shall call you Sting.\""}'
+        curl -X POST 'http://api:8888/users/1/items/' -H 'accept: application/json' -H 'Content-Type: application/json' -d '{"title": "The One Ring","description": "To rule them all."}'
+        curl -X POST 'http://api:8888/users/1/items/' -H 'accept: application/json' -H 'Content-Type: application/json' -d '{"title": "Halfling Leaf","description": "Your love for the halflings leaf has slowed your mind."}'
+
+        # Add items for user 2 (Frodo)
+        curl -X POST 'http://api:8888/users/3/items/' -H 'accept: application/json' -H 'Content-Type: application/json' -d '{"title": "Phial of Galadriel", "description": "May it be a light to you in dark places, when all other lights go out."}'
+        curl -X POST 'http://api:8888/users/3/items/' -H 'accept: application/json' -H 'Content-Type: application/json' -d '{"title": "Mithril Vest", "description": "Harder than dragon scales."}'
+        curl -X POST 'http://api:8888/users/3/items/' -H 'accept: application/json' -H 'Content-Type: application/json' -d '{"title": "Elven Cloak", "description": "Woven with the light of the stars, it hides the wearer from unfriendly eyes."}'
+        curl -X POST 'http://api:8888/users/3/items/' -H 'accept: application/json' -H 'Content-Type: application/json' -d '{"title": "Samwise", "description": "The real hero of the story."}'
+    depends_on:
+      - api
+    links:
+      - api
+
