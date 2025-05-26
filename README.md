@@ -1,6 +1,6 @@
 # Interview Question
 
-This repository is for the AI-Sandpit interview.
+This repository is for the Data Eng-Sandpit interview.
 
 ## Structure
 
@@ -31,10 +31,11 @@ This repository is for the AI-Sandpit interview.
 1. Build the docker images and run the applications
     * Hint: Should only require `docker compose`
     * Hint: The service is running on `localhost:8888`, unless changes are made to `docker-compose.yml`
-2. Create a request to obtain the list of users (any language)
-3. Obtain list of items for a user and iterate over, presenting the panel each item.
-4. Create a new item and add to the second user with the id `2` and show if the modification is updated successfully on the db.
-5. Change the service that serve on the port `8888`, to serve on the port `1111` 
+2. Create a request to obtain the list of users (any language or using API tools)
+3. Retrieve the list of items for a user and iterate over them and present the panel each item.
+4. Create a new item and add to the second user with the id `2` and show if the modification is updated successfully on the db by calling APIs.
+5. Modify the configuration so the API service runs on port `1111` instead of `8888`. 
+6. Draw an Entity-Relationship (ER) diagram to illustrate all database tables and their relationships as defined in the provided code.
 
 ## Dummy Service
 
