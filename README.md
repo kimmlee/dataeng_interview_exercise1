@@ -42,7 +42,7 @@ You have been provided with a dedicated VM that includes:
 3. Retrieve the list of items for a user and iterate over them and present the panel each item.
 4. Create a new item and add to the second user with the id `2` and show if the modification is updated successfully on the db by calling APIs.
 5. Modify the configuration so the API service runs on port `1111` instead of `8888`. 
-6. Draw an Entity-Relationship (ER) diagram to illustrate all database tables and their relationships as defined in the provided code.
+6. Draw an Entity-Relationship (ER) diagram to illustrate all database tables, their attributes, including primary and foreign keys, and their relationships as defined in the provided code.
 
 ## Dummy Service
 
