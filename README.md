@@ -35,7 +35,7 @@ You have been provided with a dedicated VM that includes:
 
 ## Interview Questions
 
-1. Build the docker images and run the applications
+Check point 1. Build the docker images and run the applications
     * Hint: Should only require `docker compose`
     * Hint: The service is running on `localhost:8888`, unless changes are made to `docker-compose.yml`
 2. Create a request to obtain the list of users (any language or using API tools)
