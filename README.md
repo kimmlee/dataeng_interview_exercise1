@@ -2,6 +2,13 @@
 
 This repository is an **10-15 minutes** exercise for the Data Eng-Sandpit interview about API and DB.
 
+## VM Details & Pre-Installed Tools
+
+You have been provided with a dedicated VM that includes:
+
+- **Docker** (pre-installed)
+---
+
 ## Structure
 
 ```bash
