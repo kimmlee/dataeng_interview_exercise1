@@ -35,14 +35,19 @@ You have been provided with a dedicated VM that includes:
 
 ## Interview Questions
 
-Check point 1. Build the docker images and run the applications
+1. Build the docker images and run the applications
     * Hint: Should only require `docker compose`
     * Hint: The service is running on `localhost:8888`, unless changes are made to `docker-compose.yml`
+   **Checkpoint A**: Successfully clone the repository and run the app via Docker.
 2. Create a request to obtain the list of users (any language or using API tools)
 3. Retrieve the list of items for a user and iterate over them and present the panel each item.
-4. Create a new item and add to the second user with the id `2` and show if the modification is updated successfully on the db by calling APIs.
-5. Modify the configuration so the API service runs on port `1111` instead of `8888`. 
+   **Checkpoint B**: Demonstrate the ability to interact with the API and understand basic request/response flows.
+4. Create a new item and add to the second user with the id `2` and show if the modification is updated successfully in the database by calling APIs.
+   **Checkpoint C**: Show ability to create and verify a new record using API interaction.
+5. Modify the configuration so the API service runs on port `1111` instead of `8888`.
+   **Checkpoint D**: Show understanding of Docker networking and port binding.
 6. Draw an Entity-Relationship (ER) diagram to illustrate all database tables, their attributes, including primary and foreign keys, and their relationships as defined in the provided code.
+   **Checkpoint E**: Demonstrate understanding of database schema as inferred from application code.
 
 ## Dummy Service
 
